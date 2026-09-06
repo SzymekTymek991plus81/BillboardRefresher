@@ -1,0 +1,19 @@
+name: BillboardRefresher
+version: '0.1'
+main: pl.carbusterrs.billboardrefresher.BillboardRefresherPlugin
+api-version: '1.21'
+author: Carbusterrs
+description: Cycles ImageFrame billboard images on a schedule, silently, via the ImageFrame API.
+depend: [ImageFrame]
+
+commands:
+  billboardrefresher:
+    description: Manage the BillboardRefresher plugin
+    usage: /billboardrefresher reload
+    permission: billboardrefresher.reload
+    aliases: [bbr]
+
+permissions:
+  billboardrefresher.reload:
+    description: Allows reloading BillboardRefresher's config.yml
+    default: op

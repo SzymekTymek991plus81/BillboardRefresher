@@ -1,0 +1,50 @@
+# =========================================================
+#  BillboardRefresher config
+# =========================================================
+#
+# For each entry under "billboards":
+#
+#   name             - MUST match exactly the ImageMap name as it was created
+#                       in ImageFrame (the <name> you used with
+#                       /imageframe create <name> <url> <w> <h> ...).
+#
+#   owner            - who owns/created that map in ImageFrame:
+#                         "console"        -> maps created by console/an op
+#                                              running the command as console
+#                         a player name    -> e.g. "Notch"
+#                         a player UUID    -> e.g. "069a79f4-44e9-4726-a5be-fca90e38aaf5"
+#
+#   interval-seconds - how often (in seconds) to move to the next image.
+#
+#   random           - false (default): cycle through "images" in order, looping.
+#                       true: pick a random image from the list every cycle.
+#
+#   images           - list of direct image URLs (png/jpg/webp/gif) to cycle
+#                       through. Needs at least one entry.
+#
+#Annoying chat refresh logs, refreshes are only optionally logged
+# to the server console (see settings.log-refreshes below).
+
+settings:
+  # If true, prints one console log line (server log, NOT chat) every time a
+  # billboard image is swapped. Useful while setting things up; set to false
+  # once you've confirmed it works to keep the console quiet.
+  log-refreshes: false
+
+billboards:
+  - name: "shop_ad"
+    owner: "console"
+    interval-seconds: 30
+    random: false
+    images:
+      - "https://example.com/images/ad1.png"
+      - "https://example.com/images/ad2.png"
+      - "https://example.com/images/ad3.png"
+
+  - name: "info_board"
+    owner: "console"
+    interval-seconds: 60
+    random: false
+    images:
+      - "https://example.com/images/info1.png"
+      - "https://example.com/images/info2.png"
